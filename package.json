@@ -1,0 +1,16 @@
+{
+  "name": "api-film",
+  "version": "1.0.0",
+  "description": "Server che espone un'API per interrogare un DB SQLite di Film",
+  "license": "MIT",
+  "author": "Matteo Ceserani",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  }
+}
