@@ -1,8 +1,12 @@
-import sqlite from "sqlite";
+import * as sqlite from "sqlite";
+import sqlite3 from "sqlite3";
 import express from "express";
 import cors from "cors";
 
-const db = await sqlite.open("./db.sqlite");
+const db = await sqlite.open({
+  filename: "./db.sqlite",
+  driver: sqlite3.Database
+});
 
 await db.run(`CREATE TABLE IF NOT EXISTS "Film" ( 
 "titolo"    TEXT NOT NULL, 
@@ -27,5 +31,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get(``, async (req, res) => {});
+app.get('/films', async (req, res) => {
+    const rows = await db.all('SELECT * FROM Film');
+    res.json(rows);
+});
+
+app.put('/film');
+
+app.delete('/:titolo');
+
+app.listen(3000, () => {
+  console.log("Server in ascolto sulla porta 3000");
+});
 
