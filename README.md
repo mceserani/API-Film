@@ -32,7 +32,7 @@ La rotta `app.delete('/:titolo')` deve essere completata per permettere l'elimin
 * Deve leggere il parametro `titolo` dall'URL.
 * Deve eseguire una query SQL `DELETE` per rimuovere il film corrispondente dal database.
 
-### 3. Implementazione Rotta POST `/film` (Opzionale/Bonus)
+### 3. Implementazione Rotta POST `/film`
 Aggiungi una nuova rotta per permettere l'inserimento di un nuovo film nel database tramite il metodo `POST`. Assicurati che i dati inviati rispettino i vincoli della tabella (es. durata e punteggio maggiori di zero).
 
 ### 4. Gestione degli Errori
